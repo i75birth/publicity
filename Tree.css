@@ -1,0 +1,51 @@
+a {
+  text-decoration: none;
+}
+
+/* 樹狀結構樣式 */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  text-align: center; /* 將文字置中 */
+}
+
+li .caret {
+  cursor: pointer;
+  display: inline-block; 
+  /*調整為行內元素 */
+}
+
+li .caret::before {
+  content: "\25B6";
+  color: rgb(58, 112, 149);
+  display: inline-block;
+  margin-right: 6px;
+}
+
+li .caret-down::before {
+  transform: rotate(90deg);
+}
+
+/* 預設情況下隱藏所有嵌套的子項 */
+.nested {
+  display: none;
+}
+
+li > ul.nested > li > ul.nested > li::before {
+  content: "●";
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  margin-right: 6px;
+  font-weight: bold;
+}
+
+/* 當專案展開時顯示嵌套的子項 */
+.active {
+  display: block;
+}
+
+

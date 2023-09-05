@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="GridBranch01Detail.css">
+  <title>Table Example</title>
+</head>
+
+<body>
+  <div  class="DetailHide">
+    <label for="searchInput">單號:</label>
+    <input type="text" id="searchInput" name="searchInput">
+    <label for="startDate">開始日期:</label>
+    <input type="date" id="startDate" name="startDate">
+    <label for="endDate">結束日期:</label>
+    <input type="date" id="endDate" name="endDate">
+    <button onclick="search()">查詢</button>
+  </div>
+  <button id="addButton" onclick="toggleAddContainer()">新增</button>
+
+  <table class="detail-table" id="detailTable">
+    <!-- 明細表格 -->
+  </table>
+
+  <div id="connectionStatus"></div>
+  <div id="addContainer" class="hidden">
+    <table id="addTable">
+      <tbody>
+        <tr>
+          <div id="toggleAddStatus"></div>
+          <td><label for="newCol2" class="col-narrow" >今日+編號</label></td>
+          <td><label for="newCol3" class="col-narrow" >身高</label></td>
+          <td><label for="newCol4" class="col-narrow" >體重</label></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="newCol2" readonly class="col-narrow"></td>
+          <td><input type="text" id="newCol3" class="col-narrow"></td>
+          <td><input type="text" id="newCol4" class="col-narrow"></td>
+        </tr>
+        <tr>
+          <td colspan="3" style="text-align: right;">
+            <button id="saveAdd" onclick="saveRecord()">Save</button>
+            <button id="cancelAdd" onclick="cancelAdd()">Cancel</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+
+  <br>
+  <div id="tableContainer">
+    <table id="myTable">
+
+      <colgroup> <!-- 添加 colgroup 元素 -->
+        <!-- 設置前五列的寬度 -->
+        <col style="width: 110px;">
+        <col style="width: 70px;">
+        <col style="width: 70px;">
+        <!-- 設置最後一列的初始寬度 -->
+        <col class="last-column" style="width: 110px;">
+      </colgroup>
+
+
+      
+      <thead>
+
+        <tr>
+          <!-- 欄位標題 -->
+        </tr>
+
+      </thead>
+      <tbody>
+        <!--  資料行將以動態方式插入此處  -->
+        
+      </tbody>
+    </table>
+  </div>
+
+  <script src="GridBranch01Detail.js"></script>
+
+</body>
+</html>
+
+

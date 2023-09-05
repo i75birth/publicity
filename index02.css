@@ -1,0 +1,96 @@
+#toggleTree {
+  margin: 0;
+  padding: 0;
+  margin-top: -0.3cm;
+  margin-bottom: -0.3cm;
+}
+.container {
+  display: flex;
+  height: 100vh; /* 設置父容器的高度為視窗的高度 */
+}
+
+.sidebar {
+  flex: 14%;
+  background-color: #ddd2d2;
+  margin-top: -0.3cm;
+  margin-bottom: -0.3cm;
+  margin-left: -0.2cm;
+}
+
+.content {
+  background-color: #c2cfe1;
+  flex: 85%;
+  margin-top: -0.3cm;
+  margin-bottom: -0.3cm;
+  margin-right: -0.3cm;
+}
+
+.sidebar.collapsed {
+  flex: 0;
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width 0.3s ease-out;
+}
+
+.topbar {
+  background-color: #f1f1f1; /* #f1f1f1; */
+  padding: 10px;
+  margin-top: -0.3cm;
+  margin-bottom: -0.3cm;
+  margin-right: -0.3cm;
+  margin-left: -0.3cm;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: underline;;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn::before {
+  content: "\25B6";
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  margin-right: 6px;
+  transition: transform 0.3s; /* 添加過渡效果 */
+}
+
+.dropdown:hover .dropbtn::before {
+  transform: rotate(90deg); /* 滑鼠懸停時旋轉90度 */
+}
+
+#iframeContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
+#iframeContainer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+

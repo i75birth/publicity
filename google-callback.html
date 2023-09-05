@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Callback</title>
+</head>
+<body>
+  <script>
+    // 獲取 URL 參數中的授權碼
+    const urlParams = new URLSearchParams(window.location.search);
+    const authorizationCode = urlParams.get('code');
+    // console.log('Author 授權碼:', authorizationCode);
+
+    // 將授權碼發送給後端
+    fetch('/auth/google/callback', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ code: authorizationCode }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        // 將權杖存儲在 localStorage 中
+        // localStorage.setItem('jwt', data.token); //跟下面一行兩種寫法都可以
+        const token = data.token;
+        const expirationTime = data.expirationTime; // 從後端回應中獲取到期時間
+        sessionStorage.setItem('jwt', token);
+        localStorage.setItem('jwt', token);
+        localStorage.setItem('expirationTime', expirationTime); // 保存到期時間 
+        // 跳轉到 index02.html 頁面
+        window.location.href = '/frontend/index02.html';
+    })
+    .catch(error => {
+      console.error('發生錯誤:', error);
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
