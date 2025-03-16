@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="index.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  integrity="29f0768507f33e4ca7708ae24a0bb60105f9b4f3d897ac12a4aa72bcc82bd5941aa2e327f2be32cea30a181a676fec9a"
+  crossorigin="anonymous"
+/>
+
+  <title>登入/註冊</title>
+</head>
+<body>
+  <div class="registerBody">
+    <h1 style="display:inline-block; margin: 30px 0px 0px 0px;">登入</h1><h6 style="display:inline-block; margin: 0px 0px 0px 0px;">(預設帳密guest，可自行註冊。)</h6>
+    <br>
+  <form id="registerForm" style="margin: 50px 0px 0px 30px;">
+    <label for="username">使用者名稱：</label>
+    <input type="text" id="username" required>
+    <label for="password">密碼：</label>
+    <input type="password" id="password" required>
+    <button id="togglePassword" type="button">👁️</button>
+    <br>
+    <div class="recaptcha-container">
+      <div id="recaptcha-loading" style="display: block;">載入中...</div>
+      <!-- google打勾 -->
+      <div
+        class="g-recaptcha"
+        data-sitekey=""
+        data-theme="light"
+        data-size="normal"
+        data-callback="verifyCallback02"
+        data-expired-callback="expired"
+        data-error-callback="error"
+      ></div>
+    </div>
+    <div class="button-container">
+    <button
+    id="loginRegister"
+    class="g-recaptcha"
+    data-sitekey=""
+    data-action="submit01"
+    data-callback="verifyCallback"
+    type="button">
+    登入
+  </button>
+  <span style="padding-left:120px;"></span>
+    <button
+    id="loginRegister02"
+    class="g-recaptcha"
+    data-sitekey=""
+    data-action="submit02"
+    data-callback="verifyCallback"
+    type="button">
+    註冊
+  </button>
+
+  <h6 id="h6nono" style="display: inline-block;margin: 8px 0px 0px -15px;">(註冊方式:上方輸入帳密點擊註冊。)</h6>  
+</div>
+<br><br>
+<button
+  id="google-login-button"
+  class="g-recaptcha"
+  data-sitekey=""
+  data-action="submit03"
+  data-callback="verifyCallback03"
+  type="button">
+  <i class="fab fa-google fa-2x"></i><span class="google-login-text">Google 帳號登入</span>
+</button>
+
+<br>
+<h3 id="statusMessage"></h3>
+  </form>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="index.js"></script>
+
+</div>
+</body>
+</html>
+
+
